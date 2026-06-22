@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho: Campo vs. Cidade</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2e7d32, #1565c0);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .introducao {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .container-colunas {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .coluna {
+            flex: 1;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 5px solid;
+        }
+
+        .campo { border-top-color: #4caf50; }
+        .cidade { border-top-color: #2196f3; }
+
+        .coluna h2 {
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        /* Estilo para as imagens ficarem ajustadas e bonitas */
+        .imagem-bloco {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .coluna ul {
+            list-style-position: inside;
+            margin-top: 0.5rem;
+        }
+
+        .interacao {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .botoes {
+            margin: 1.5rem 0;
+        }
+
+        button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 0.5rem;
+            transition: background 0.3s;
+        }
+
+        .btn-campo { background-color: #4caf50; color: white; }
+        .btn-campo:hover { background-color: #388e3c; }
+
+        .btn-cidade { background-color: #2196f3; color: white; }
+        .btn-cidade:hover { background-color: #1976d2; }
+
+        #resultado {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 5px;
+            font-weight: 500;
+            min-height: 60px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Espaço Rural e Espaço Urbano</h1>
+        <p>Entendendo as diferenças, conexões e características do Campo e da Cidade</p>
+    </header>
+
+    <main>
+        <section class="introducao">
+            <h2>Introdução</h2>
+            <p>O campo (espaço rural) e a cidade (espaço urbano) possuem realidades diferentes, mas são profundamente interconectados. Enquanto o campo foca na produção de matérias-primas e alimentos, a cidade concentra os serviços, indústrias e a maior parte da população.</p>
+        </section>
+
+        <section class="container-colunas">
+            <div class="coluna campo">
+                <h2>O Campo (Espaço Rural)</h2>
+                <img src="campo.jpeg" alt="Paisagem do Campo" class="imagem-bloco">
+                
+                <p>Caracteriza-se pela presença de áreas verdes, plantações, criação de animais e menor densidade demográfica.</p>
+                <ul>
+                    <li>Ar mais puro e contato com a natureza.</li>
+                    <li>Produção de alimentos (agricultura e pecuária).</li>
+                    <li>Ritmo de vida mais tranquilo.</li>
+                </ul>
+            </div>
+
+            <div class="coluna cidade">
+                <h2>A Cidade (Espaço Urbano)</h2>
+                <img src="cidade.jpeg" alt="Paisagem da Cidade" class="imagem-bloco">
+                
+                <p>Caracteriza-se pela grande concentração de pessoas, prédio, comércios, indústrias e infraestrutura tecnológica.</p>
+                <ul>
+                    <li>Maior oferta de empregos e serviços (hospitais, escolas).</li>
+                    <li>Opções variadas de lazer e cultura.</li>
+                    <li>Problemas com trânsito e poluição.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="interacao">
+            <h2>Qual estilo de vida combina mais com você?</h2>
+            <p>Clique nos botões abaixo para descobrir as vantagens de cada ambiente:</p>
+            <div class="botoes">
+                <button class="btn-campo" onclick="mostrarVantagem('campo')">Quero saber do Campo</button>
+                <button class="btn-cidade" onclick="mostrarVantagem('cidade')">Quero saber da Cidade</button>
+            </div>
+            <div id="resultado"><em>Clique em um dos botões acima para ver o conteúdo.</em></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Trabalho Escolar: Campo e Cidade &copy; 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
